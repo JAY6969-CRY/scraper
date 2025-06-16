@@ -2,6 +2,7 @@
 import React from 'react';
 import { MoneyControlScraper } from '@/components/MoneyControlScraper';
 import { ApiKeySetup } from '@/components/ApiKeySetup';
+import { FinancialDataViewer } from '@/components/FinancialDataViewer';
 
 const Index = () => {
   return (
@@ -16,10 +17,10 @@ const Index = () => {
         <header className="px-6 py-8">
           <div className="max-w-6xl mx-auto text-center">
             <h1 className="text-5xl font-bold text-white mb-4 bg-gradient-to-r from-blue-400 via-green-400 to-blue-400 bg-clip-text text-transparent">
-              MoneyControl Scraper
+              NewsSense - Financial Intelligence
             </h1>
-            <p className="text-xl text-blue-200 max-w-2xl mx-auto">
-              Extract financial data from MoneyControl website with advanced web scraping technology
+            <p className="text-xl text-blue-200 max-w-3xl mx-auto">
+              AI-powered system that explains why your stocks, ETFs, and mutual funds are performing the way they are
             </p>
           </div>
         </header>
@@ -32,7 +33,12 @@ const Index = () => {
               <ApiKeySetup />
             </div>
             
-            {/* Scraper Interface */}
+            {/* Financial Data Viewer */}
+            <div className="flex justify-center">
+              <FinancialDataViewer />
+            </div>
+            
+            {/* Web Scraper Interface */}
             <div className="flex justify-center">
               <MoneyControlScraper />
             </div>
@@ -41,7 +47,7 @@ const Index = () => {
 
         {/* Footer */}
         <footer className="text-center py-8 text-blue-300">
-          <p>Powered by Firecrawl API • Built with React & TypeScript</p>
+          <p>NewsSense • Powered by Firecrawl API • Built with React & TypeScript</p>
         </footer>
       </div>
     </div>
