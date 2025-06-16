@@ -60,7 +60,7 @@ export class FirecrawlService {
         this.firecrawlApp = new FirecrawlApp({ apiKey });
       }
 
-      // Optimized crawl settings for MoneyControl
+      // Optimized crawl settings for MoneyControl using correct API v1 parameters
       const crawlResponse = await this.firecrawlApp.crawlUrl(url, {
         limit: 10, // Limit pages to avoid excessive usage
         scrapeOptions: {
@@ -68,9 +68,7 @@ export class FirecrawlService {
           onlyMainContent: true, // Focus on main content
           includeTags: ['title', 'meta', 'h1', 'h2', 'h3', 'p', 'div', 'span', 'table'],
           excludeTags: ['script', 'style', 'nav', 'footer', 'header'],
-        },
-        allowBackwardCrawling: false,
-        allowExternalContentLinks: false,
+        }
       }) as CrawlResponse;
 
       if (!crawlResponse.success) {
